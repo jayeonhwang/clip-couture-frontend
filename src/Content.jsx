@@ -25,14 +25,32 @@ export function Content() {
   }
 
   const handleShowProduct = (product) => {
-    console.log("handleClose")
     setProductsShowVisible(true)
     setCurrentProduct(product)
   }
 
+  const handleUpdateProduct = (id, params, successCallBack) => {
+    console.log("handleUpdateProduct", params);
+    axios.patch(`http://localhost:3000/products/${id}.json`, params).then(response => {
+      setProducts(
+        products.map(product => {
+          if (product.id === response.data.id) {
+            return response.data;
+          } else {
+            return product
+          }
+        })
+      )
+      successCallBack()
+      handleClose()
+    })
+  }
+
+
   const handleClose = () => {
     setProductsShowVisible(false)
   }
+
 
   useEffect(getProducts, []);
 
@@ -43,7 +61,7 @@ export function Content() {
       <ProductsNew onCreateProduct={createProduct} />
       <ProductsIndex products={products} onShowProduct={handleShowProduct} />
       <Modal show={isProductsShowVisible} onClose={handleClose}>
-        <ProductsShow product={currentProduct} />
+        <ProductsShow product={currentProduct} onUpdateProduct={handleUpdateProduct} />
       </Modal>
 
     </main>
