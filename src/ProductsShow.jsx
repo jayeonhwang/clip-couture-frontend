@@ -4,6 +4,11 @@ export function ProductsShow(props) {
     const params = new FormData(event.target)
     props.onUpdateProduct(props.product.id, params, () => event.target.reset())
   }
+
+  const handleClick = () => {
+    props.onDestroyProduct(props.product);
+  };
+
   return (
     <div>
       <h1>Product information</h1>
@@ -15,8 +20,8 @@ export function ProductsShow(props) {
         <p>price <input defaultValue={props.product.price} name="price" type="text" /></p>
         <p>description <input defaultValue={props.product.description} name="description" type="text" /></p>
         <button type="submit">Update Product</button>
-
       </form>
+      <button onClick={handleClick}>Destroy Product</button>
     </div>
   );
 }
