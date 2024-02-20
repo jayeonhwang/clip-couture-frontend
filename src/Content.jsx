@@ -39,7 +39,7 @@ export function Content() {
   return (
 
     <main>
-      <h1>Clip-Couture</h1>
+      <h1 className="text-3xl font-bold underline">Clip-Couture</h1>
       <ProductsNew onCreateProduct={createProduct} />
       <ProductsIndex products={products} onShowProduct={handleShowProduct} />
       <Modal show={isProductsShowVisible} onClose={handleClose}>
