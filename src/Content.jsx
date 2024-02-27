@@ -4,6 +4,9 @@ import { ProductsShow } from "./ProductsShow"
 import axios from "axios";
 import { useState, useEffect } from "react"
 import { Modal } from "./Modal";
+import { Routes, Route } from "react-router-dom"
+import { Login } from "./Login"
+
 
 export function Content() {
   const [products, setProducts] = useState([]);
@@ -69,6 +72,9 @@ export function Content() {
         <ProductsShow product={currentProduct} onUpdateProduct={handleUpdateProduct} onDestroyProduct={handleDestroyProduct} />
       </Modal>
 
+      <Routes>
+        <Route path="/login" element={<Login />} />
+      </Routes>
     </main>
   )
 }
