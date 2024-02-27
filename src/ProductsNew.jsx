@@ -22,7 +22,7 @@ export function ProductsNew(props) {
           supplier_id: <input name="supplier_id" type="integer" />
         </div>
         <div>
-          Images: <input name="url" type="text" />
+          Images: <input name="image" type="text" />
         </div>
         <button type="submit">Create Product</button>
       </form>
