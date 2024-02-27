@@ -6,6 +6,7 @@ import { useState, useEffect } from "react"
 import { Modal } from "./Modal";
 import { Routes, Route } from "react-router-dom"
 import { Login } from "./Login"
+import { Signup } from "./Signup";
 
 
 export function Content() {
@@ -66,15 +67,15 @@ export function Content() {
 
     <main>
       <h1 className="text-3xl font-bold underline">Clip-Couture</h1>
-      <ProductsNew onCreateProduct={createProduct} />
-      <ProductsIndex products={products} onShowProduct={handleShowProduct} />
+      <Routes>
+        <Route path="/login" element={<Login />} />
+        <Route path="/" element={<ProductsIndex products={products} onShowProduct={handleShowProduct} />} />
+        <Route path="/new" element={<ProductsNew onCreateProduct={createProduct} />} />
+        <Route path="/signup" element={<Signup />} />
+      </Routes>
       <Modal show={isProductsShowVisible} onClose={handleClose}>
         <ProductsShow product={currentProduct} onUpdateProduct={handleUpdateProduct} onDestroyProduct={handleDestroyProduct} />
       </Modal>
-
-      <Routes>
-        <Route path="/login" element={<Login />} />
-      </Routes>
     </main>
   )
 }
