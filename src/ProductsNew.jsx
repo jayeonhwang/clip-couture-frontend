@@ -1,8 +1,15 @@
+import { useState } from "react";
+
 export function ProductsNew(props) {
+  const [images, setImages] = useState([''])
   const handleSubmit = (event) => {
     event.preventDefault();
     const params = new FormData(event.target)
     props.onCreateProduct(params, () => event.target.reset())
+  }
+
+  const addImage = () => {
+    setImages([...images, ''])
   }
 
   return (
@@ -21,11 +28,13 @@ export function ProductsNew(props) {
         <div>
           supplier_id: <input name="supplier_id" type="integer" />
         </div>
-        <div>
-          Images: <input name="image" type="text" />
-        </div>
+        {images.map(image => (
+          <p>Image:<input name="images[]" type="text" /></p>
+        ))}
         <button type="submit">Create Product</button>
       </form>
+
+      <button onClick={addImage}>add more image</button>
     </div>
   );
 }
