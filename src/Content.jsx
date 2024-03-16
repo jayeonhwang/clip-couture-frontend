@@ -7,6 +7,7 @@ import { Modal } from "./Modal";
 import { Routes, Route } from "react-router-dom"
 import { Login } from "./Login"
 import { Signup } from "./Signup";
+import { CartedProductsIndex } from "./CartedProductsIndex";
 
 
 export function Content() {
@@ -72,6 +73,8 @@ export function Content() {
         <Route path="/" element={<ProductsIndex products={products} onShowProduct={handleShowProduct} />} />
         <Route path="/new" element={<ProductsNew onCreateProduct={createProduct} />} />
         <Route path="/signup" element={<Signup />} />
+        <Route path="/cart" element={<CartedProductsIndex />} />
+
       </Routes>
       <Modal show={isProductsShowVisible} onClose={handleClose}>
         <ProductsShow product={currentProduct} onUpdateProduct={handleUpdateProduct} onDestroyProduct={handleDestroyProduct} />
