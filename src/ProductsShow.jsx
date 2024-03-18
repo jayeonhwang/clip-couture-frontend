@@ -32,6 +32,7 @@ export function ProductsShow(props) {
       <p>Name: {props.product.name}</p>
       <p>price: {props.product.price}</p>
       <p>Description: {props.product.description}</p>
+      <p>Brand: {props.product.supplier_id}</p>
       {/* <form onSubmit={handleSubmit}>
         <p>Name <input defaultValue={props.product.name} name="name" type="text" /></p>
         <p>price <input defaultValue={props.product.price} name="price" type="text" /></p>
