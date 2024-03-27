@@ -9,6 +9,7 @@ import { Login } from "./Login"
 import { Signup } from "./Signup";
 import { CartedProductsIndex } from "./CartedProductsIndex";
 import { OrderIndex } from "./OrderIndex";
+import { OrdersShow } from "./OrderShow";
 
 
 export function Content() {
@@ -76,6 +77,8 @@ export function Content() {
         <Route path="/signup" element={<Signup />} />
         <Route path="/cart" element={<CartedProductsIndex />} />
         <Route path="/order" element={<OrderIndex />} />
+        <Route path="/order/:id" element={<OrdersShow />} />
+
       </Routes>
       <Modal show={isProductsShowVisible} onClose={handleClose}>
         <ProductsShow product={currentProduct} onUpdateProduct={handleUpdateProduct} onDestroyProduct={handleDestroyProduct} />

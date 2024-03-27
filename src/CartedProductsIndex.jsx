@@ -22,7 +22,7 @@ export function CartedProductsIndex() {
   const createOrder = () => {
     axios.post(`http://localhost:3000/orders.json`).then(response => {
       console.log(response.data);
-      window.location.href = `/order`
+      window.location.href = `/order/${response.data.id}`
     })
   }
 
