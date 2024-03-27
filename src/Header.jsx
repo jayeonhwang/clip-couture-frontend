@@ -3,24 +3,36 @@ import { LogoutLink } from "./LogoutLink"
 
 export function Header() {
 
-
+  let loggedInStatus;
+  if (localStorage.jwt) {
+    loggedInStatus =
+      <>
+        <Link className="px-3" to="/order">My Order</Link>  <LogoutLink />
+      </>
+  } else {
+    loggedInStatus =
+      <>
+        <Link className="px-3" to="/login">Login</Link>  <Link to="/signup">Sign Up</Link>
+      </>
+  }
 
   return (
-    <header >
-      <div className="Logo">
-        <Link to="/">
-          <h1 className="container mx-auto flex flex-wrap items-center text-3xl font-bold ">Clip-Couture</h1>
-        </Link>
+    <header className="grid gap-3">
+
+      <div className="flex items-center justify-center">
+        <Link to="/" className="text-4xl font-bold">Clip Couture</Link>
       </div>
 
-      <nav className="UserNav">
-        <Link to="/">All</Link> | <Link to="/new">New</Link> | <Link to="/signup">Sign Up</Link> | <Link to="/login">Login</Link> | <Link to="/cart">Cart</Link> | <Link to="/order">Order</Link> | <LogoutLink />
+      <nav className="flex justify-end">
+        <div>
+          {loggedInStatus}
+        </div>
+        <Link className="px-3" to="/cart"> Cart</Link>
       </nav>
 
-      <div className="navbar flex items-center">
+      <div className="navbar">
         <a href="">Best Sellers</a>
         <a href="/new">New Arrivals</a>
-        <a href="/">Shop</a>
         <div class="dropdown">
           <button class="dropbtn">Categories
             <i class="fa fa-caret-down"></i>

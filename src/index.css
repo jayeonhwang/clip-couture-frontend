@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-html {
+header html {
   scroll-behavior: smooth;
 }
 
@@ -12,6 +12,7 @@ html {
   background-color: #333;
   font-family: Arial;
   display: flex;
+  justify-content: space-evenly;
 }
 
 
