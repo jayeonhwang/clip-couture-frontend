@@ -69,7 +69,6 @@ export function Content() {
   return (
 
     <main>
-      <h1 className="text-3xl font-bold underline">Clip-Couture</h1>
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/" element={<ProductsIndex products={products} onShowProduct={handleShowProduct} />} />
