@@ -30,8 +30,8 @@ export function CartedProductsIndex() {
         payment_method_types: [
           'card',
         ],
-        success_url: `http://localhost:5173/order/${response.data.id}`,
-        cancel_url: `http://localhost:5173/`,
+        success_url: `https://main--charming-starburst-59d6fd.netlify.app/order/${response.data.id}`,
+        cancel_url: `https://main--charming-starburst-59d6fd.netlify.app`,
         line_items: [
           {
             price_data: {
