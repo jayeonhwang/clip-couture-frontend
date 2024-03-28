@@ -4,6 +4,7 @@ import axios from "axios";
 export function ProductsNew(props) {
   const [images, setImages] = useState([''])
   const [suppliers, setSuppliers] = useState([])
+  const [categories, setCategories] = useState([])
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -18,12 +19,18 @@ export function ProductsNew(props) {
     })
   }
 
+  const categoriesIndex = () => {
+    axios.get(`http://localhost:3000/categories.json`).then(response => {
+      setCategories(response.data)
+    })
+  }
 
   const addImage = () => {
     setImages([...images, ''])
   }
 
   useEffect(suppliersIndex, [])
+  useEffect(categoriesIndex, [])
 
 
   return (
@@ -37,7 +44,7 @@ export function ProductsNew(props) {
           Price: <input name="price" type="integer" />
         </div>
         <div>
-          Description: <input name="description" type="integer" />
+          Description: <input name="description" type="text" />
         </div>
 
         {images.map(image => (
@@ -53,10 +60,21 @@ export function ProductsNew(props) {
           </select>
         </div>
 
+        <div>
+          categories:
+          <select name="category">
+            {categories.map(category => (
+              <option>{category.name}</option>
+            ))}
+          </select>
+        </div>
+
+
         <button type="submit">Create Product</button>
       </form>
 
       <button onClick={addImage}>add more image</button>
+
     </div>
   );
 }
