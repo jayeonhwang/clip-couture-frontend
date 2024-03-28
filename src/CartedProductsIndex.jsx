@@ -7,7 +7,7 @@ export function CartedProductsIndex() {
 
   const getCartedProducts = () => {
     console.log('getting products')
-    axios.get('http://localhost:3000/carted_products.json').then(response => {
+    axios.get('/carted_products.json').then(response => {
       console.log(response.data)
       setCartedProducts(response.data)
     })
@@ -15,13 +15,13 @@ export function CartedProductsIndex() {
 
   const deleteCartedProduct = (cartedProductId) => {
     console.log('delete cartedProduct')
-    axios.delete(`http://localhost:3000/carted_products/${cartedProductId}.json`).then(response => {
+    axios.delete(`/carted_products/${cartedProductId}.json`).then(response => {
       setCartedProducts(cartedProducts.filter(c => c.id !== cartedProductId))
     })
   }
 
   const createOrder = () => {
-    axios.post(`http://localhost:3000/orders.json`).then(response => {
+    axios.post(`/orders.json`).then(response => {
 
       let stripe = Stripe(import.meta.env.VITE_STRIPE_KEY);
 

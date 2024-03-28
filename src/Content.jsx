@@ -19,13 +19,13 @@ export function Content() {
   const [currentProduct, setCurrentProduct] = useState({})
 
   const getProducts = () => {
-    axios.get("http://localhost:3000/products.json").then(response => {
+    axios.get("/products.json").then(response => {
       setProducts(response.data);
     })
   }
 
   const createProduct = (params, successCallBack) => {
-    axios.post("http://localhost:3000/products.json", params).then(
+    axios.post("/products.json", params).then(
       response => {
         setProducts([...products, response.data])
         successCallBack();
@@ -39,7 +39,7 @@ export function Content() {
 
   const handleUpdateProduct = (id, params, successCallBack) => {
     console.log("handleUpdateProduct", params);
-    axios.patch(`http://localhost:3000/products/${id}.json`, params).then(response => {
+    axios.patch(`/products/${id}.json`, params).then(response => {
       setProducts(
         products.map(product => {
           if (product.id === response.data.id) {
@@ -55,7 +55,7 @@ export function Content() {
   }
 
   const handleDestroyProduct = (product) => {
-    axios.delete(`http://localhost:3000/products/${product.id}.json`).then(response => {
+    axios.delete(`/products/${product.id}.json`).then(response => {
       setProducts(products.filter(p => p.id !== product.id))
       handleClose();
     })

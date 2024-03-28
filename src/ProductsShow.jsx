@@ -15,7 +15,7 @@ export function ProductsShow(props) {
     console.log('adding cart')
     event.preventDefault();
     const params = new FormData(event.target);
-    axios.post("http://localhost:3000/carted_products.json", params).then(response => {
+    axios.post("/carted_products.json", params).then(response => {
       console.log(response.data)
       window.location.href = "/"
     })

@@ -8,7 +8,7 @@ export function OrdersShow() {
   })
   const params = useParams();
   const getOrder = () => {
-    axios.get(`http://localhost:3000/orders/${params.id}.json`).then(response => {
+    axios.get(`/orders/${params.id}.json`).then(response => {
       console.log(response.data);
       setOrder(response.data)
     })

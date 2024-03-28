@@ -13,14 +13,14 @@ export function ProductsNew(props) {
   }
 
   const suppliersIndex = () => {
-    axios.get(`http://localhost:3000/suppliers.json`).then(response => {
+    axios.get(`/suppliers.json`).then(response => {
       console.log(response.data)
       setSuppliers(response.data)
     })
   }
 
   const categoriesIndex = () => {
-    axios.get(`http://localhost:3000/categories.json`).then(response => {
+    axios.get(`/categories.json`).then(response => {
       setCategories(response.data)
     })
   }
