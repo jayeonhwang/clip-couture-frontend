@@ -52,8 +52,8 @@ export function Header() {
       </nav>
 
       <div className="navbar">
-        <a href="">Best Sellers</a>
-        <a href="/new">New Arrivals</a>
+        <a href="/">Best Sellers</a>
+        <a href="/new">New</a>
 
         <div className="dropdown">
           <button className="dropbtn">Categories
