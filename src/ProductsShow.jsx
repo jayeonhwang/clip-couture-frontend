@@ -24,7 +24,6 @@ export function ProductsShow(props) {
 
   return (
     <div>
-      <img width="300px" src={props.product.images[0].url} />
       <p>{props.product.name}</p>
       <p>price: ${props.product.price}</p>
       <p>{props.product.description}</p>
