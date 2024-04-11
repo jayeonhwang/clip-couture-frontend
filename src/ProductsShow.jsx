@@ -24,11 +24,11 @@ export function ProductsShow(props) {
 
   return (
     <div>
-      <h1>Product information</h1>
-      <p>Name: {props.product.name}</p>
-      <p>price: {props.product.price}</p>
-      <p>Description: {props.product.description}</p>
-      <p>Brand: {props.product.supplier_id}</p>
+      <img width="300px" src={props.product.images[0].url} />
+      <p>{props.product.name}</p>
+      <p>price: ${props.product.price}</p>
+      <p>{props.product.description}</p>
+
       {/* <form onSubmit={handleSubmit}>
         <p>Name <input defaultValue={props.product.name} name="name" type="text" /></p>
         <p>price <input defaultValue={props.product.price} name="price" type="text" /></p>
@@ -44,7 +44,7 @@ export function ProductsShow(props) {
         <div>
           Quantity: <input name="quantity" type="text" />
         </div>
-        <button className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded" type="submit">Add To Cart</button>
+        <button className="bg-transparent hover:bg-gray-500 text-gray-700 font-semibold hover:text-white py-2 px-4 border border-gray-500 hover:border-transparent rounded" type="submit">Add To Cart</button>
       </form>
 
     </div>
