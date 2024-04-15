@@ -52,7 +52,7 @@ export function Header() {
       </nav>
 
       <div className="navbar">
-        <a href="/">Best Sellers</a>
+        <a href="/">All Products</a>
         <a href="/new">New</a>
 
         <div className="dropdown">
@@ -73,7 +73,7 @@ export function Header() {
           </button>
           <div className="dropdown-content">
             {suppliers.map(supplier => (
-              <a href="#">{supplier.name}</a>
+              <Link to={`/brands/${supplier.id}`}>{supplier.name}</Link>
             ))}
           </div>
         </div>
