@@ -12,6 +12,7 @@ import { OrderIndex } from "./OrderIndex";
 import { OrdersShow } from "./OrderShow";
 import { BrandIndex } from "./BrandIndex"
 import { CategoryIndex } from "./CategoryIndex";
+import { UpdatedIndex } from "./Updated";
 
 
 export function Content() {
@@ -74,7 +75,8 @@ export function Content() {
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/" element={<ProductsIndex products={products} onShowProduct={handleShowProduct} />} />
-        <Route path="/new" element={<ProductsNew onCreateProduct={createProduct} />} />
+        <Route path="/new" element={<UpdatedIndex products={products} onShowProduct={handleShowProduct} />} />
+        <Route path="/update" element={<ProductsNew onCreateProduct={createProduct} />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/cart" element={<CartedProductsIndex />} />
         <Route path="/order" element={<OrderIndex />} />

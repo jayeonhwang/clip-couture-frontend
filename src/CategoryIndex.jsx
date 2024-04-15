@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
 
-export function CategoryIndex() {
+export function CategoryIndex(props) {
   const { id } = useParams();
   const [category, setCategory] = useState(null);
   const [error, setError] = useState(null);

@@ -53,7 +53,7 @@ export function Header() {
 
       <div className="navbar">
         <a href="/">All Products</a>
-        <a href="/new">New</a>
+        <a href="/new">New Arrivals</a>
 
         <div className="dropdown">
           <button className="dropbtn">Categories
@@ -61,7 +61,7 @@ export function Header() {
           </button>
           <div className="dropdown-content">
             {categories.map(category => (
-              <a href="#">{category.name}</a>
+              <Link to={`/category/${category.id}`}>{category.name}</Link>
             ))}
           </div>
         </div>
