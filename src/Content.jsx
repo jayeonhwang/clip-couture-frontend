@@ -11,6 +11,7 @@ import { CartedProductsIndex } from "./CartedProductsIndex";
 import { OrderIndex } from "./OrderIndex";
 import { OrdersShow } from "./OrderShow";
 import { BrandIndex } from "./BrandIndex"
+import { CategoryIndex } from "./CategoryIndex";
 
 
 export function Content() {
@@ -79,6 +80,7 @@ export function Content() {
         <Route path="/order" element={<OrderIndex />} />
         <Route path="/order/:id" element={<OrdersShow />} />
         <Route path="/brands/:id" element={<BrandIndex products={products} onShowProduct={handleShowProduct} />} />
+        <Route path="/category/:id" element={<CategoryIndex products={products} onShowProduct={handleShowProduct} />} />
       </Routes>
       <Modal show={isProductsShowVisible} onClose={handleClose}>
         <ProductsShow product={currentProduct} onUpdateProduct={handleUpdateProduct} onDestroyProduct={handleDestroyProduct} />
