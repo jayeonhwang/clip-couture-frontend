@@ -78,8 +78,7 @@ export function Content() {
         <Route path="/cart" element={<CartedProductsIndex />} />
         <Route path="/order" element={<OrderIndex />} />
         <Route path="/order/:id" element={<OrdersShow />} />
-        <Route path="/brands" element={<BrandIndex />} />
-
+        <Route path="/brands/:id" element={<BrandIndex products={products} onShowProduct={handleShowProduct} />} />
       </Routes>
       <Modal show={isProductsShowVisible} onClose={handleClose}>
         <ProductsShow product={currentProduct} onUpdateProduct={handleUpdateProduct} onDestroyProduct={handleDestroyProduct} />

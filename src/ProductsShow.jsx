@@ -24,7 +24,8 @@ export function ProductsShow(props) {
 
   return (
     <div>
-      <p>{props.product.name}</p>
+      <h1>{props.product.name}</h1>
+
       <p>price: ${props.product.price}</p>
       <p>{props.product.description}</p>
 
@@ -41,7 +42,7 @@ export function ProductsShow(props) {
           <input name="product_id" type="hidden" defaultValue={props.product.id} />
         </div>
         <div>
-          Quantity: <input name="quantity" type="text" />
+          Quantity: <input name="quantity" type="text" defaultValue={1} />
         </div>
         <button className="bg-transparent hover:bg-gray-500 text-gray-700 font-semibold hover:text-white py-2 px-4 border border-gray-500 hover:border-transparent rounded" type="submit">Add To Cart</button>
       </form>
