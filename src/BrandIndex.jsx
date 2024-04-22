@@ -29,11 +29,16 @@ export function BrandIndex(props) {
     return <div>Loading...</div>;
   }
 
+  const lastProducts = supplier.products
+    .slice()
+    .reverse()
+    .slice(0, 20);
+
   return (
     <div>
       <h1>Brand Index</h1>
       <div className="grid grid-cols-3 gap-4">
-        {supplier.products && supplier.products.map(product => (
+        {lastProducts && lastProducts.map(product => (
           <div key={product.id}>
             {product.images && product.images[0] && (
               <img width="300px" src={product.images[0].url} alt={product.name} />
