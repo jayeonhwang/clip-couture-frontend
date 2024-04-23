@@ -7,7 +7,7 @@ export function UpdatedIndex(props) {
 
   return (
     <div>
-      <div className="grid grid-cols-3 gap-4">
+      <div className="my-5 justify-items-center	grid grid-cols-3 gap-4">
         {lastProducts.map(product => (
           <div key={product.id}>
             <img width="300px" src={product.images[0].url} />

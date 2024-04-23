@@ -37,7 +37,7 @@ export function BrandIndex(props) {
   return (
     <div>
       <h1>Brand Index</h1>
-      <div className="grid grid-cols-3 gap-4">
+      <div className="my-5 justify-items-center grid grid-cols-3 gap-4">
         {lastProducts && lastProducts.map(product => (
           <div key={product.id}>
             {product.images && product.images[0] && (

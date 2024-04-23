@@ -1,7 +1,7 @@
+import axios from "axios";
 import { ProductsIndex } from "./ProductsIndex";
 import { ProductsNew } from "./ProductsNew";
 import { ProductsShow } from "./ProductsShow"
-import axios from "axios";
 import { useState, useEffect } from "react"
 import { Modal } from "./Modal";
 import { Routes, Route } from "react-router-dom"

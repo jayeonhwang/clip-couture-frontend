@@ -31,7 +31,7 @@ export function CategoryIndex(props) {
 
   return (
     <div>
-      <div className="grid grid-cols-3 gap-4">
+      <div className="my-5 justify-items-center grid grid-cols-3 gap-4">
         {category.products && category.products.map(product => (
           <div key={product.id}>
             {product.images && product.images[0] && (
