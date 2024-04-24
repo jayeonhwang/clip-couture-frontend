@@ -10,7 +10,9 @@ export function UpdatedIndex(props) {
       <div className="my-5 justify-items-center	grid grid-cols-3 gap-4">
         {lastProducts.map(product => (
           <div key={product.id}>
-            <img width="300px" src={product.images[0].url} />
+            {product.images && product.images[0] && (
+              <img width="300px" src={product.images[0].url} alt={product.name} />
+            )}
             <h2>{product.name}</h2>
             <p>{product.price}</p>
             <p>{product.supplier_name}</p>

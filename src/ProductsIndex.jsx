@@ -6,7 +6,9 @@ export function ProductsIndex(props) {
       <div className="justify-items-center my-5 grid grid-cols-3 gap-4">
         {props.products.map(product => (
           <div key={product.id}>
-            <img width="300px" src={product.images[0].url} />
+            {product.images && product.images[0] && (
+              <img width="300px" src={product.images[0].url} alt={product.name} />
+            )}
             <h2>{product.name}</h2>
             <p>{product.price}</p>
             <p>{product.supplier_name}</p>

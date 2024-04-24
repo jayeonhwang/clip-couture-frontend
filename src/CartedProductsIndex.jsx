@@ -30,8 +30,8 @@ export function CartedProductsIndex() {
         payment_method_types: [
           'card',
         ],
-        success_url: `https://main--charming-starburst-59d6fd.netlify.app/order/${response.data.id}`,
-        cancel_url: `https://main--charming-starburst-59d6fd.netlify.app`,
+        success_url: `https://poetic-croissant-099c70.netlify.app//order/${response.data.id}`,
+        cancel_url: `https://poetic-croissant-099c70.netlify.app/.app`,
         line_items: [
           {
             price_data: {
