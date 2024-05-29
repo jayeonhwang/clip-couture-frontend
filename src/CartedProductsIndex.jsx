@@ -20,9 +20,11 @@ export function CartedProductsIndex() {
     })
   }
 
+
+
   const createOrder = () => {
     axios.post(`/orders.json`).then(response => {
-
+      console.log(response.data)
       let stripe = Stripe(import.meta.env.VITE_STRIPE_KEY);
 
       stripe.checkout.sessions.create({
@@ -35,7 +37,7 @@ export function CartedProductsIndex() {
         line_items: [
           {
             price_data: {
-              unit_amount: response.data.total * 100,
+              unit_amount: +response.data.total * 100,
               currency: 'usd',
               product_data: {
                 name: 'Test Product'
