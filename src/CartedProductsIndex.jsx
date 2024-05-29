@@ -30,7 +30,7 @@ export function CartedProductsIndex() {
         payment_method_types: [
           'card',
         ],
-        success_url: `https://poetic-croissant-099c70.netlify.app//order/${response.data.id}`,
+        success_url: `https://poetic-croissant-099c70.netlify.app/order/${response.data.id}`,
         cancel_url: `https://poetic-croissant-099c70.netlify.app/.app`,
         line_items: [
           {
