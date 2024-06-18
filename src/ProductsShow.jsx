@@ -29,14 +29,6 @@ export function ProductsShow(props) {
       <p>price: ${props.product.price}</p>
       <p>{props.product.description}</p>
 
-      {/* <form onSubmit={handleSubmit}>
-        <p>Name <input defaultValue={props.product.name} name="name" type="text" /></p>
-        <p>price <input defaultValue={props.product.price} name="price" type="text" /></p>
-        <p>description <input defaultValue={props.product.description} name="description" type="text" /></p>
-        <button type="submit">Update Product</button>
-      </form>
-      <button onClick={handleClick}>Destroy Product</button> */}
-
       <form onSubmit={addToCart}>
         <div>
           <input name="product_id" type="hidden" defaultValue={props.product.id} />
@@ -46,6 +38,17 @@ export function ProductsShow(props) {
         </div>
         <button className="bg-transparent hover:bg-gray-500 text-gray-700 font-semibold hover:text-white py-2 px-4 border border-gray-500 hover:border-transparent rounded" type="submit">Add To Cart</button>
       </form>
+      <br />
+      <div className="border-2 border-gray-500 p-2">
+        <p>Only for admin</p>
+        <form onSubmit={handleSubmit}>
+          <p>Name <input defaultValue={props.product.name} name="name" type="text" /></p>
+          <p>price <input defaultValue={props.product.price} name="price" type="text" /></p>
+          <p>description <input defaultValue={props.product.description} name="description" type="text" /></p>
+          <button className="bg-transparent hover:bg-gray-500 text-gray-700 font-semibold hover:text-white px-2 border border-gray-500 hover:border-transparent rounded" type="submit">Update Product</button>
+        </form>
+        <button className="bg-transparent hover:bg-gray-500 text-gray-700 font-semibold hover:text-white px-2 border border-gray-500 hover:border-transparent rounded mt-1" onClick={handleClick}>Destroy Product</button>
+      </div>
 
     </div>
   );

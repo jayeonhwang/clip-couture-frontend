@@ -38,10 +38,10 @@ export function Login() {
       </ul>
       <form onSubmit={handleSubmit}>
         <div>
-          Email: <input name="email" type="email" />
+          Email: <input className="shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="email" type="email" />
         </div>
         <div>
-          Password: <input name="password" type="password" />
+          Password: <input className="shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mt-1" name="password" type="password" />
         </div>
         <button className="bg-transparent hover:bg-gray-500 text-gray-700 font-semibold hover:text-white py-2 px-4 border border-gray-500 hover:border-transparent rounded" type="submit">Login</button>
       </form>

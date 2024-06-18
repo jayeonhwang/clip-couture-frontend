@@ -7,6 +7,7 @@ export function Header() {
   const [suppliers, setSuppliers] = useState([])
   const [categories, setCategories] = useState([])
 
+
   const suppliersIndex = () => {
     axios.get(`/suppliers.json`).then(response => {
       console.log(response.data)
@@ -19,7 +20,6 @@ export function Header() {
       setCategories(response.data)
     })
   }
-
 
   let loggedInStatus;
   if (localStorage.jwt) {
